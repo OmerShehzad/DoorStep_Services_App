@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "166272580634",
+    "firebase_url": "https://einvestment-30334.firebaseio.com",
+    "project_id": "einvestment-30334",
+    "storage_bucket": "einvestment-30334.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166272580634:android:ff9f2d508aba65ef60a5a3",
+        "android_client_info": {
+          "package_name": "com.softgeeks.doorstep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166272580634-63e2qbrcpdaah5ndqkc3qt7vjtvq2n5f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKhFkapTXrhNBRqfORhUY6cHrcL8rUou4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166272580634-63e2qbrcpdaah5ndqkc3qt7vjtvq2n5f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166272580634:android:db7f52cfdb21469160a5a3",
+        "android_client_info": {
+          "package_name": "com.softgeeks.einvestment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166272580634-63e2qbrcpdaah5ndqkc3qt7vjtvq2n5f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKhFkapTXrhNBRqfORhUY6cHrcL8rUou4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166272580634-63e2qbrcpdaah5ndqkc3qt7vjtvq2n5f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

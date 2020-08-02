@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/uidWhite"
+    android:theme="@style/UIDAppThemeEt">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/app_name"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        android:id="@+id/ivBackEmailVerification"
+        android:src="@drawable/ic_uid_personal_back_yellow"/>
+
+    <TextView
+        android:id="@+id/tvUIDEmailVerifyHeader"
+        style="@style/uidHeaderTxt"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/txtVerifyEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBackEmailVerification" />
+
+    <TextView
+        android:id="@+id/tvUIDEmailVerifyDes"
+        style="@style/uidDesTxt"
+        android:layout_marginTop="8dp"
+        android:text="@string/txtEmailVerificationInstruction"
+        app:layout_constraintStart_toStartOf="@id/tvUIDEmailVerifyHeader"
+        app:layout_constraintTop_toBottomOf="@id/tvUIDEmailVerifyHeader" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/uidLayoutEmailVerify"
+        style="@style/UIDTextLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="46dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUIDPasscode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/txtEnterCode"
+            android:imeOptions="actionDone"
+            android:inputType="number|textNoSuggestions"
+            android:singleLine="true"
+            android:textSize="17sp"
+            android:theme="@style/UIDTextLabel" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvUIDResendCode"
+        style="@style/uidDesTxt"
+        android:layout_marginTop="16dp"
+        android:text="@string/txtEmailResendCode"
+        app:layout_constraintStart_toStartOf="@id/uidLayoutEmailVerify"
+        app:layout_constraintTop_toBottomOf="@id/uidLayoutEmailVerify" />
+
+    <TextView
+        android:id="@+id/tvUIDChangeEmail"
+        style="@style/uidDesTxt"
+        android:layout_marginTop="8dp"
+        android:text="@string/txtChangeEmail"
+        app:layout_constraintStart_toStartOf="@id/uidLayoutEmailVerify"
+        app:layout_constraintTop_toBottomOf="@id/tvUIDResendCode"
+
+        />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="36dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUIDChangeEmail"
+        android:id="@+id/emailVerificationProgressBar"
+        />
+
+
+    <Button
+        android:id="@+id/btnVerify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/uid_btn"
+        android:fontFamily="@font/montserrat_semibold"
+        android:padding="16dp"
+        android:textAllCaps="false"
+        android:text="Verify OTP"
+        android:textColor="@color/uidWhite"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

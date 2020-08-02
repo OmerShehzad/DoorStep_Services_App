@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:id="@+id/ivServicesDes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivServicesDes"
+        android:textSize="18sp"
+        android:layout_margin="8dp"
+        android:textColor="@color/uidDarkBlack"
+        style="@style/uidHeaderTxt"
+        android:id="@+id/tvServicesDesName"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+   app:layout_constraintTop_toBottomOf="@id/tvServicesDesName"
+        app:layout_constraintStart_toEndOf="@id/ivServicesDes"
+
+        android:textSize="18sp"
+        android:layout_margin="8dp"
+        android:textColor="@color/uidDarkBlack"
+        style="@style/uidHeaderTxt"
+        android:id="@+id/tvServicesDesPrice"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvServicesDesPrice"
+        app:layout_constraintStart_toEndOf="@id/ivServicesDes"
+
+        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:drawableStart="@drawable/ic_clock"
+        android:layout_margin="8dp"
+        android:textColor="@color/uidGrey"
+        style="@style/uidDesTxt"
+        android:id="@+id/tvServicesDesTime"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Details >>"
+        android:id="@+id/tvViewDetails"
+        android:textColor="@color/uidPurple"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvServicesDesTime"
+        app:layout_constraintStart_toEndOf="@id/ivServicesDes"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Add"
+        android:gravity="center_vertical"
+        style="@style/uidDesTxt"
+        android:id="@+id/tvAdd"
+        android:padding="8dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/uid_tv"
+        android:drawableEnd="@drawable/ic_add_cart"
+        android:textColor="@color/uidPurple"
+        android:textStyle="bold"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

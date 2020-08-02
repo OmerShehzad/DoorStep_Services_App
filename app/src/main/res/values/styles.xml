@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="Font" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:textColor">@color/uidGrey</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+
+    </style>
+    <style name="UIDTextLabel">
+        <item name="android:textColorHint">@color/uidTabUnselectedColor</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/montserrat_light</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/uidDarkBlack</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="colorAccent">@color/uidTabUnselectedColor</item>
+        <item name="colorControlNormal">@color/uidTabUnselectedColor</item>
+        <item name="colorControlActivated">@color/uidYellow</item>
+    </style>
+    <style name="uidDesTxt">
+        <item name="android:fontFamily">@font/montserrat_light</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/uidDarkBlack</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="UIDAppThemeEt" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/uidYellow</item>
+    </style>
+    <style name="uidHeaderTxt">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/uidGrey</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+</resources>

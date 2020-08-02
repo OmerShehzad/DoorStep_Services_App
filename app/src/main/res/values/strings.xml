@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">doorstep</string>
+    <string name="appTagline">Your place, Your world</string>
+    <string name="txtEmailAddress">Email address</string>
+    <string name="txtSkip">Skip for now</string>
+    <string name="txtPhoneNo">Cell No</string>
+    <string name="txtPassword">Password</string>
+    <string name="txtAddress">Address</string>
+    <string name="txtUserName">User Name</string>
+    <string name="txtCPassword">Confirm Password</string>
+    <string name="txtForger">Forgot your password?</string>
+    <string name="txtSignIn">Sign in</string>
+    <string name="txtSignUp">Sign up</string>
+    <string name="txtDontAccount">Don\'t you have an account? Create</string>
+    <string name="txtHaveAccount">Have an account? Login</string>
+    <string name="etSearchHint">Search for services</string>
+    <string name="txtVerifyEmail">Verify Phone No</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="uidErrorVerifyingCredentials">Something wrong in verifying credentials, Try again</string>
+
+    //Email verification screen
+    <string name="txtEmailVerificationInstruction">We\'ve sent you a verification code to ensure this\ncell no belongs to you.</string>
+    <string name="txtEnterCode">Enter Code</string>
+    <string name="txtEmailResendCode">Resend code</string>
+    <string name="txtChangeEmail">Change cell no</string>
+
+    <string name="txtOwnerName">txtOwnerName</string>
+    <string name="txtOwnerEmail">txtOwnerEmail</string>
+    <string name="txtOwnerMobile">txtOwnerMobile</string>
+    <string name="txtOwnerCity">txtOwnerCity</string>
+    <string name="txtOwnerArea">txtOwnerArea</string>
+    <string name="txtOwnerCountry">txtOwnerCountry</string>
+    <string name="txtOwnerAddress">txtOwnerAddress</string>
+    <string name="txtOwnerType">txtOwnerType</string>
+    <string name="txtOwnerAuthKey">txtOwnerAuthKey</string>
+
+    <string name="isLogin">isLogin</string>
+    <string name="loginSession">loginSession</string>
+
+</resources>

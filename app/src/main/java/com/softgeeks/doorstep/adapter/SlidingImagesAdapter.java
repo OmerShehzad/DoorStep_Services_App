@@ -1,0 +1,79 @@
+package com.softgeeks.doorstep.adapter;
+
+import android.content.Context;
+import android.os.Parcelable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import androidx.viewpager.widget.PagerAdapter;
+
+import com.bumptech.glide.Glide;
+import com.softgeeks.doorstep.R;
+import com.softgeeks.doorstep.model.Banner;
+
+import java.util.List;
+
+
+public class SlidingImagesAdapter extends PagerAdapter {
+
+
+    private List<Banner> bannerList;
+    private LayoutInflater inflater;
+    private Context context;
+
+
+    public SlidingImagesAdapter(Context context, List<Banner> imagesArray) {
+        this.context=context;
+        this.bannerList=imagesArray;
+        inflater=LayoutInflater.from (context);
+
+
+    }
+
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        container.removeView ((View) object);
+    }
+
+    @Override
+    public int getCount() {
+        return bannerList.size ();
+    }
+
+    @Override
+    public Object instantiateItem(ViewGroup view, int position) {
+        View imageLayout=inflater.inflate (R.layout.item_slider_images, view, false);
+
+        assert imageLayout != null;
+        final ImageView ivSlider=(ImageView) imageLayout
+                .findViewById (R.id.ivSlider);
+        ivSlider.setImageResource (bannerList.get (position).getBannerImg ());
+       // Glide.with(context).load(Base_URL + "/" + bannerList.get(position).getBannerImg()).placeholder(R.drawable.ic_logo).into(ivSlider);
+
+
+
+
+        view.addView (imageLayout, 0);
+
+
+        return imageLayout;
+    }
+
+    @Override
+    public boolean isViewFromObject(View view, Object object) {
+        return view.equals (object);
+    }
+
+    @Override
+    public void restoreState(Parcelable state, ClassLoader loader) {
+    }
+
+    @Override
+    public Parcelable saveState() {
+        return null;
+    }
+
+
+}
