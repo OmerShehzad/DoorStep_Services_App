@@ -1,5 +1,9 @@
 package com.softgeeks.doorstep.utils;
 
+
+
+//All countries with their codes are mentioned in class. This class is used in sign up for showing spinner for selecting countries
+
 public class CountryData {
     public static final String[] countryNames = {"Afghanistan", "Albania",
             "Algeria", "Andorra", "Angola", "Antarctica", "Argentina",

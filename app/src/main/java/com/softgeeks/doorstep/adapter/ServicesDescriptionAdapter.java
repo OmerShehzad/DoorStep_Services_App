@@ -19,6 +19,8 @@ import java.util.List;
 /**
  * Created by Ghulam Qadir on 02,August,2020
  */
+
+//his adapter class is used to populate data of services get from db and inflates items layout
 public class ServicesDescriptionAdapter extends RecyclerView.Adapter<ServicesDescriptionAdapter.MyViewHolder> {
 
     private List<Services> servicesList;
@@ -31,7 +33,7 @@ public class ServicesDescriptionAdapter extends RecyclerView.Adapter<ServicesDes
         private TextView tvServicesDesName, tvServicesDesPrice,tvServicesDesTime,tvViewDetails,tvAdd;
         private ImageView ivServicesDes;
 
-
+//here initialize all controls of layout
         public MyViewHolder(View view) {
             super (view);
             tvServicesDesName=view.findViewById (R.id.tvServicesDesName);
@@ -62,14 +64,16 @@ public class ServicesDescriptionAdapter extends RecyclerView.Adapter<ServicesDes
         return new ServicesDescriptionAdapter.MyViewHolder (itemView);
     }
 
+    // set data on controls like text view and set the images of services on image view by downloading first through glide library and set image in
+    //imageview
     @Override
     public void onBindViewHolder(final ServicesDescriptionAdapter.MyViewHolder holder, int position) {
         final Services services=servicesList.get (position);
         holder.tvServicesDesName.setText (services.getServiceName ());
-        holder.tvServicesDesPrice.setText ("Rs ." + services.getServicePrice ());
+        holder.tvServicesDesPrice.setText ("Rs. " + services.getServicePrice ());
         holder.tvServicesDesTime.setText ( services.getServiceAvailableTime ());
         Glide.with (context)
-                .load (services.getServiceImgURl ())
+                .load ("http://rentacar.softgeeksdigital.com/public/uploads/"+services.getServiceImgURl ())
                 .error (context.getResources ().getDrawable (R.drawable.slider))
                 .placeholder (context.getResources ().getDrawable (R.drawable.slider))
                 .into (holder.ivServicesDes);

@@ -4,6 +4,7 @@ package com.softgeeks.doorstep.model;
  * Created by Ghulam Qadir on 28,June,2020
  */
 public class Login {
+    //This model class is used while sending /verifying user data in Login API
     String email,password,fcm_token;
 
     public Login(String email, String password, String fcm_token) {

@@ -30,7 +30,7 @@ import com.softgeeks.doorstep.R;
 import com.softgeeks.doorstep.network.CallUtils;
 
 import java.util.concurrent.TimeUnit;
-
+//This fragment is used for phone no verification which we get from registration fragment
 public class PhoneVerificationFragment extends Fragment implements View.OnClickListener {
     ImageView ivBackEmailVerification;
     TextInputEditText etUIDPasscode;
@@ -46,8 +46,10 @@ public class PhoneVerificationFragment extends Fragment implements View.OnClickL
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate (R.layout.fragment_phone_verification, container, false);
+        //initviews is used to initialize the views
         initViews (view);
         actionProfileVerificationInstance=Navigation.findNavController (getActivity (), R.id.mainNavHostFragment);
+        //get bundles data get the data sent from previous fragment
         getBundlesData ();
         return view;
     }
@@ -60,7 +62,7 @@ public class PhoneVerificationFragment extends Fragment implements View.OnClickL
         email=bundle.getString ("email", "");
         password=bundle.getString ("password", "");
 
-
+//send verification code method sent a code generated from firebase to specific phone no
         sendVerificationCode (phoneNo);
     }
 
@@ -84,6 +86,7 @@ public class PhoneVerificationFragment extends Fragment implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId ()) {
 
+            // btnverify will automatically verifies the data if code in edit text will be empty than it prompt to user to enter code otherwise it verifies first
             case R.id.btnVerify:
                 String code=etUIDPasscode.getText ().toString ().trim ();
 
@@ -93,12 +96,16 @@ public class PhoneVerificationFragment extends Fragment implements View.OnClickL
                     etUIDPasscode.requestFocus ();
                     return;
                 }
+
                 verifyCode(code);
                 break;
             case R.id.tvUIDChangeEmail:
+                //if user want to change email than he can press chaange email text and it moves towards registration screen again
                 actionProfileVerificationInstance.navigate (R.id.action_profile_to_register);
                 break;
             case R.id.tvUIDResendCode:
+                //if user want to generate a new verification code than he can press resend code option and code will be resent to him
+                // on text message as well
                 sendVerificationCode (phoneNo);
                 break;
 
@@ -109,6 +116,7 @@ public class PhoneVerificationFragment extends Fragment implements View.OnClickL
 
     private void sendVerificationCode(String number) {
         emailVerificationProgressBar.setVisibility (View.VISIBLE);
+        //this code verifies phone no and send code to mobile
         PhoneAuthProvider.getInstance ().verifyPhoneNumber (
                 number,
                 60,
@@ -120,7 +128,7 @@ public class PhoneVerificationFragment extends Fragment implements View.OnClickL
     }
 
 
-
+//remember i use firebase as a sending medium for generating and sending a new code so in this method phone no first verified and than a 6 digit code will be generated
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks
             mCallBack=new PhoneAuthProvider.OnVerificationStateChangedCallbacks () {
 
@@ -133,7 +141,7 @@ public class PhoneVerificationFragment extends Fragment implements View.OnClickL
 
 
 
-
+//on verification of phone no completed code will be sent through this method and verified in verify code method
         @Override
         public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
             String code=phoneAuthCredential.getSmsCode ();
@@ -143,6 +151,7 @@ public class PhoneVerificationFragment extends Fragment implements View.OnClickL
             }
         }
 
+        //on verification failed i display a toast message which displays error happened there
         @Override
         public void onVerificationFailed(FirebaseException e) {
             emailVerificationProgressBar.setVisibility (View.GONE);
@@ -150,7 +159,9 @@ public class PhoneVerificationFragment extends Fragment implements View.OnClickL
         }
     };
 
-
+// on success of sign in with credentials what should be done is defined here
+    //we call signup method which can store data in db  of new user
+    //if code is not true than a toast message will be displaying showing error on it
     public void signInWithCredential(PhoneAuthCredential credential) {
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult> () {
@@ -168,6 +179,8 @@ emailVerificationProgressBar.setVisibility (View.GONE);
                     }
                 });
     }
+
+
     public void verifyCode(String code) {
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
         signInWithCredential(credential);

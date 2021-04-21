@@ -22,17 +22,20 @@ import retrofit2.http.POST;
 //all endpoints are mentioned in this class
 public interface GetDataService {
 
-
+     //"login" endpoint represent the login use case, all user data is passed in model class of login in json format, In this use case a created user verified through db and allow to enter into app.
     @POST("login")
     Call<Object> getLoginInstance(@Body Login login);
+
+    //"sign-up" endpoint represent the sign up use case, all user data is passed in model class of User in json format, In this use case a new user created.
     @POST("sign-up")
     Call<Object> getRegisterInstance(@Body User user);
 
-
+    // This endpoint get the main categories from backend data base and display on home screen.
     @POST("get-categories")
     Call<Object> getCategoriesInstance(@Body GetCategories getCategories);
 
-    @POST("getServices")
+    // This endpoint get the services according to each categories from backend data base and display on services screen.
+    @POST("get-services")
     Call<Object> getServicesInstance(@Body GetServices getServices);
 }
 

@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="250dp"/>
+        android:layout_height="200dp"/>
 
     <me.relex.circleindicator.CircleIndicator
         android:id="@+id/indServiceDes"

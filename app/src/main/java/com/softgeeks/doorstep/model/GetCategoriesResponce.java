@@ -4,6 +4,7 @@ package com.softgeeks.doorstep.model;
  * Created by Ghulam Qadir on 29,June,2020
  */
 public class GetCategoriesResponce {
+    //This model class is used for saving categories response which is sent from backend data base accordingly
     String car_id,user_id,owner_name,mobile,plate,image,color,start_date,end_date,price,city,area,is_driver,status,created_at,updated_at;
 
     public GetCategoriesResponce(String car_id, String user_id, String owner_name, String mobile, String plate, String image, String color, String start_date, String end_date, String price, String city, String area, String is_driver, String status, String created_at, String updated_at) {

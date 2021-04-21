@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="5dp"
-            android:text="Explore By Category"
+            android:text="@string/txtExplore"
             android:textColor="@color/uidDarkBlack"
             android:textSize="18dp"
             android:textStyle="bold"
@@ -94,7 +94,7 @@
             android:drawablePadding="5dp"
             android:gravity="right|center"
             android:padding="5dp"
-            android:text="View all"
+            android:text="@string/txtView"
             android:textColor="@color/uidDarkBlack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pager" />

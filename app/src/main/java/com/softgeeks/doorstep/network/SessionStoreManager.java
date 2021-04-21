@@ -16,12 +16,16 @@ import static android.content.Context.MODE_PRIVATE;
 /**
  * Created by Ghulam Qadir on 22,January,2020
  */
+
+//This class is used for saving mobile app data in shared preferences for temporary purposes . This class has methods through which we can save
+    //any kind of data whether it is string boolean integer float or any image or file.
 public class SessionStoreManager {
 
     private String TAG="--> Session Store Manager", mShared="mSharedData";
     private Context mContext;
     private SharedPreferences mSharedPref;
 
+    //A constructor of SessionStoreManager having params context used for creating object and call method if required
     public SessionStoreManager(Context context) {
         mContext=context;
         mSharedPref=context.getSharedPreferences (mShared, Context.MODE_PRIVATE);
@@ -33,7 +37,7 @@ public class SessionStoreManager {
         editor.putString (key, value);
         return editor.commit ();
     }
-
+    //Get String data from Shared Prefs
     public String getStringData(String key) {
         String value=mSharedPref.getString (key, "");
         return value;
@@ -45,7 +49,7 @@ public class SessionStoreManager {
         editor.putBoolean (key, hasValidValue);
         return editor.commit ();
     }
-
+    //Get Boolean data from Shared Prefs
     public Boolean getBooleanData(String key) {
         Boolean hasValidValue=mSharedPref.getBoolean (key, false);
         return hasValidValue;
@@ -57,7 +61,7 @@ public class SessionStoreManager {
         editor.putInt (key, value);
         return editor.commit ();
     }
-
+    //Get Integer data from Shared Prefs
     public int getIntegerData(String key) {
         int value=mSharedPref.getInt (key, 0);
         return value;
@@ -71,7 +75,7 @@ public class SessionStoreManager {
         editor.putFloat (key, value);
         return editor.commit ();
     }
-
+    //Get Float data from Shared Prefs
     public float getFloatData(String key) {
         float top=mSharedPref.getFloat (key, 0.0f);
         return top;
@@ -94,7 +98,7 @@ public class SessionStoreManager {
             Log.d (TAG, "Error accessing file: " + e.getMessage ());
         }
     }
-
+    //Get Bitmap data from Shared Prefs
     public Bitmap getBitmapFile(String fileName) {
         String destination=getDataPath () + "/" + File.separator + fileName + ".jpg";
         File imgFile=new File (destination);

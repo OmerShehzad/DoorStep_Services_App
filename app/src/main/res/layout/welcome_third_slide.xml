@@ -8,9 +8,9 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/ic_bg_welcome_screen_3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Transparent pricing - Experts Only \n Fully Equipped professionals"
+        android:text="@string/txtWelcomeIntroThird"
         android:textAlignment="center"
         android:textColor="@color/uidWhite"
         android:textSize="19sp"

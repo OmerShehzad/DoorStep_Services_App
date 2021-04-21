@@ -4,6 +4,7 @@ package com.softgeeks.doorstep.model;
  * Created by Ghulam Qadir on 29,June,2020
  */
 public class User {
+    //This model class contains all user data in which we can get all user data which is login or sign up anywhere in the app
     String user_name,email,password,mobile,city,area,country,address,fcm_token,type;
 
     public User(String user_name, String email, String password, String mobile, String city, String area, String country, String address, String fcm_token, String type) {

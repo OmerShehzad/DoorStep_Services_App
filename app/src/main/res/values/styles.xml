@@ -12,6 +12,8 @@
         <item name="fontFamily">@font/montserrat_bold</item>
 
     </style>
+
+<!--    All text style themes mentioned here-->
     <style name="UIDTextLabel">
         <item name="android:textColorHint">@color/uidTabUnselectedColor</item>
         <item name="android:textSize">12sp</item>

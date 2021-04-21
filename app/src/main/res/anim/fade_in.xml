@@ -14,7 +14,7 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
+<!--all animations of how screen moves to 2d screen defined in anim folder-->
 <set xmlns:android="http://schemas.android.com/apk/res/android">
     <alpha
         android:duration="@android:integer/config_shortAnimTime"

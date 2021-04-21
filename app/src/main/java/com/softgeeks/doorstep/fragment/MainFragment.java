@@ -23,29 +23,33 @@ import com.softgeeks.doorstep.R;
 import java.util.ArrayList;
 import java.util.List;
 
-
+//This fragment class all tabs related code defined (what should be on first tab ,which fragment/screen opens in 2nd tab and similarly for third and 4th one)
+//For tabs m using bottom navigation ex library which creates tab automatically
 public class MainFragment extends Fragment {
     private ViewPager uidViewPager;
     private BottomNavigationViewEx uidNavigationView;
     private NavController actionHomeController;
     private VpAdapter adapter;
     private List<Fragment> fragments;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate (R.layout.fragment_main, container, false);
+        View view=inflater.inflate (R.layout.fragment_main, container, false);
+
         initData ();
         initViews (view);
         initEvent ();
-  return view;
+        return view;
     }
-    private void initViews(View root) {
 
+    private void initViews(View root) {
+//all control should be initialized here in intViews method and what controls should be visible or not defined here
         uidViewPager=root.findViewById (R.id.uidViewPager);
         uidNavigationView=root.findViewById (R.id.uidNavigationView);
         actionHomeController=Navigation.findNavController (getActivity (), R.id.mainNavHostFragment);
-
+//al list of fragment added above i initdata method shall be passed in vpAdapter which further connect these fragments together according to their position in list
         adapter=new VpAdapter (getChildFragmentManager (), fragments);
         uidViewPager.setAdapter (adapter);
         uidNavigationView.setupWithViewPager (uidViewPager);
@@ -56,8 +60,8 @@ public class MainFragment extends Fragment {
     }
 
     private void initData() {
+//this method initializes a list named fragment in which all fragment added in a list
         fragments=new ArrayList<> (5);
-
 
 
         HomeFragment homeFragment=new HomeFragment ();
@@ -76,6 +80,7 @@ public class MainFragment extends Fragment {
     }
 
     private static class VpAdapter extends FragmentStatePagerAdapter {
+        //this viewpager adapter collects a list of fragment initialized above and bind together according to list item position
         private List<Fragment> data;
 
         public VpAdapter(FragmentManager fm, List<Fragment> data) {
@@ -105,6 +110,7 @@ public class MainFragment extends Fragment {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int position=0;
                 switch (item.getItemId ()) {
+//what is the position value if specific tab is selected should be defined here in switch case statements
                     case R.id.navigation_home:
 
                         position=0;

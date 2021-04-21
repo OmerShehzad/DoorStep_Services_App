@@ -4,6 +4,7 @@ package com.softgeeks.doorstep.model;
  * Created by Ghulam Qadir on 02,August,2020
  */
 public class Services {
+//This model class contains all services data get from backend database
     String serviceName,servicePrice,serviceDescription,serviceImgURl,serviceAvailableTime;
 
     public Services(String serviceName, String servicePrice, String serviceDescription, String serviceImgURl, String serviceAvailableTime) {

@@ -17,13 +17,13 @@ import java.util.List;
 
 
 public class SlidingImagesAdapter extends PagerAdapter {
-
+// this adapter is used for showing banners on top , adapter connect the list items together according to singe  item layout design in xml
 
     private List<Banner> bannerList;
     private LayoutInflater inflater;
     private Context context;
 
-
+    //constructor which is used to call this model class and pass list of images accordingly
     public SlidingImagesAdapter(Context context, List<Banner> imagesArray) {
         this.context=context;
         this.bannerList=imagesArray;
@@ -31,6 +31,7 @@ public class SlidingImagesAdapter extends PagerAdapter {
 
 
     }
+
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
@@ -42,6 +43,9 @@ public class SlidingImagesAdapter extends PagerAdapter {
         return bannerList.size ();
     }
 
+    //initialzation of single item layout and initialization of its object are done here
+
+    //set data from list sould also be done from here
     @Override
     public Object instantiateItem(ViewGroup view, int position) {
         View imageLayout=inflater.inflate (R.layout.item_slider_images, view, false);
@@ -50,9 +54,6 @@ public class SlidingImagesAdapter extends PagerAdapter {
         final ImageView ivSlider=(ImageView) imageLayout
                 .findViewById (R.id.ivSlider);
         ivSlider.setImageResource (bannerList.get (position).getBannerImg ());
-       // Glide.with(context).load(Base_URL + "/" + bannerList.get(position).getBannerImg()).placeholder(R.drawable.ic_logo).into(ivSlider);
-
-
 
 
         view.addView (imageLayout, 0);

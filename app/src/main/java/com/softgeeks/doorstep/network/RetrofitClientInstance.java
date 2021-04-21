@@ -34,15 +34,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by Ghulam Qadir on 12,July,2019
  */
+
+//This class basically contains all request basic content what is required to make a request .like header and creates a base url by adding header into it
+//and is used during API calls in Call Utils class.Header data will be "key is X-Authorization and it has specific value which verifies from server that user is valid and the request is not a spam"
 public class RetrofitClientInstance {
 
-    private static Retrofit retrofitInstance,retrofitLoginInstance,retrofitUploadDataInstance;
-
-    private static final String UID_BASE_URL="http://rentAcar.softgeeksdigital.com/public/api/";
+    private static Retrofit retrofitInstance, retrofitLoginInstance;
 
     public static OkHttpClient.Builder provideOkHttpClientDefault(final Context mContext) {
         OkHttpClient.Builder httpClient=new OkHttpClient.Builder ();
-        final SessionStoreManager mSessionStoreManager=new SessionStoreManager (mContext);
         httpClient.addInterceptor (new Interceptor () {
             @NotNull
             @Override
@@ -58,6 +58,7 @@ public class RetrofitClientInstance {
         });
         return httpClient;
     }
+
     public static OkHttpClient.Builder provideOkHttpClientLogin(final Context mContext) {
         OkHttpClient.Builder httpClient=new OkHttpClient.Builder ();
         final SessionStoreManager mSessionStoreManager=new SessionStoreManager (mContext);
@@ -76,47 +77,37 @@ public class RetrofitClientInstance {
         });
         return httpClient;
     }
+
     public static Retrofit getRetrofitInstance(Context mContext) {
 
-
-        OkHttpClient.Builder httpClient = provideOkHttpClientDefault(mContext);
-        OkHttpClient client = httpClient.build();
-        retrofitInstance = new Retrofit.Builder()
-                    .baseUrl(BuildConfig.BASEURL)
-                    .addConverterFactory(GsonConverterFactory.create())
+// This retrofit client Header , URL method class is used before login , Hre Base URL is defined in build.gradle app file
+        OkHttpClient.Builder httpClient=provideOkHttpClientDefault (mContext);
+        OkHttpClient client=httpClient.build ();
+        retrofitInstance=new Retrofit.Builder ()
+                .baseUrl (BuildConfig.BASEURL)
+                .addConverterFactory (GsonConverterFactory.create ())
                 .client (client)
-                    .build();
+                .build ();
 
 
         return retrofitInstance;
     }
 
     public static Retrofit getRetrofitLoginInstance(Context mContext) {
+// This retrofit client Header , URL method class is used after login , Hre Base URL is defined in build.gradle app file for getting categories and services etc
 
-
-        OkHttpClient.Builder httpClient = provideOkHttpClientLogin (mContext);
-        OkHttpClient client = httpClient.build();
-        retrofitLoginInstance = new Retrofit.Builder()
-                .baseUrl(BuildConfig.BASEURL)
-                .addConverterFactory(GsonConverterFactory.create())
+        OkHttpClient.Builder httpClient=provideOkHttpClientLogin (mContext);
+        OkHttpClient client=httpClient.build ();
+        retrofitLoginInstance=new Retrofit.Builder ()
+                .baseUrl (BuildConfig.BASEURL)
+                .addConverterFactory (GsonConverterFactory.create ())
                 .client (client)
-                .build();
+                .build ();
 
 
         return retrofitLoginInstance;
     }
-    public static Retrofit getRetrofitUploadDataInstance(Context mContext){
-        OkHttpClient.Builder httpClient=provideOkHttpClientLogin (mContext);
-        OkHttpClient client=httpClient
-                .connectTimeout (2, TimeUnit.MINUTES)
-                .readTimeout (2, TimeUnit.MINUTES).build ();
-        retrofitUploadDataInstance = new Retrofit.Builder()
-                .baseUrl(BuildConfig.BASEURL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .client (client)
-                .build();
-        return retrofitUploadDataInstance;
-    }
+
 
 }
 
